@@ -4,59 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quesadilla Recept</title>
-    <style>
-        /* Grunden för hela layouten */
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
-            grid-template-rows: auto;
-            gap: 10px; /* Mellanrum mellan rutorna */
-            height: 100vh;
-        }
-
-        /* Vänster kolumn */
-        .left {
-            grid-column: 1 / 2;
-            grid-row: 2/5; 
-            background-color: #ddd;
-        
-        }
-
-        /* Mittsektionen, med två block högst upp */
-        .top-center {
-            grid-column: 2 / 3;
-            grid-row: 1;
-            background-color: #ccc;
-        }
-        
-        .middle-center {
-            grid-column: 2 / 3;
-            grid-row: 2/4;
-            background-color: #bbb;
-            height: 100x; 
-        }
-
-        .bottom-center {
-            grid-column: 2 / 3;
-            grid-row: 4;
-            background-color: #ccc;
-            height: 200px; 
-        }
-
-        /* Höger kolumn */
-        .right {
-            grid-column: 3 / 4;
-            grid-row: 2/5;
-            background-color: #ccc;
-        }
-
-        /* Footer */
-        .footer {
-            grid-column: 1 / 4;
-            background-color: #ccc;
-            height: 50px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -65,7 +13,11 @@
         <div class="middle-center"></div>
         <div class="bottom-center"></div>
         <div class="right"></div>
+        <div class="right pic"></div>
+        <div class="right pic"></div>
         <div class="footer"></div>
+
+        <img id="right-img1" src="img/" alt="">
     </div>
 </body>
 </html>
