@@ -34,6 +34,29 @@
     font-size: 20px; /* Gör texten större vid hover */
     color: #007bff; /* Ändra färgen vid hover */
 }
+
+/* Dölja bilder som standard */
+.ingredient-image {
+    display: none; /* Bilden är dolda från början */
+    position: absolute; /* Gör så att den kan placeras ovanpå */
+    top: 250%; /* Sätt bilden direkt under listobjektet */
+    left: 0;
+    width: 140px; /* Justera bredden på bilden efter behov */
+    height: auto;
+}
+
+/* Visa bilden när användaren hovrar över ingrediensen */
+.ingredient:hover + .ingredient-image {
+    display: block; /* Gör bilden synlig vid hover */
+}
+
+/* För att placera innehåll rätt i listan */
+ul {
+    position: relative;
+    list-style-type: none; /* Tar bort punkterna från listan */
+    padding-left: 0;
+}
+
 /* Sektioner */
 .top-center {
     grid-column: 2 / 3;
@@ -43,8 +66,23 @@
 
 .middle-center {
     grid-column: 2 / 3;
-    grid-row: 3/4;
+    grid-row: 3 / 4;
     background-color: #bbb;
+    font-size: 11px;
+}
+
+/* Stil för alla <li> i ol */
+.middle-center li {
+    font-size: 14px; /* Standardstorlek */
+    margin-bottom: 10px; /* Litet mellanrum mellan punkterna */
+    transition: transform 0.3s ease, color 0.3s ease; /* Mjuk övergång */
+}
+
+/* Hover-effekt för varje <li> */
+.middle-center li:hover {
+    transform: scale(1.2); /* Förstorar individuellt */
+    color: #007bff; /* Ändrar färg vid hover */
+    font-weight: bold; /* Gör texten fetare vid hover */
 }
 
 .bottom-center {
