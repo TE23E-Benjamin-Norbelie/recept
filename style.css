@@ -127,7 +127,6 @@ ul {
     height: 100%; /* Gör containern lika hög som dess förälderelement */
     width: auto; /* Sätt bredden på bilden till auto */
 }
-
 /* Justera bilder */
 .image-container img {
     max-width: 90%; /* Begränsar bildens bredd till 90% av containern */
