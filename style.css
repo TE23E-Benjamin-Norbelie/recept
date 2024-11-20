@@ -1,50 +1,57 @@
+/* Ändra bakgrundsfärgen på hela sidan */
+body {
+    background-color: #ffee00; /* Färgen utanför grid-boxarna */
+    margin: 0; /* Ta bort standardmarginaler */
+    padding: 0; /* Ta bort standardpadding */
+    font-family: "Arial", sans-serif; /* Använd Arial som standard font */
+}
+
 /* Grunden för hela layouten */
 .container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: auto 1fr 2fr;
-    gap: 10px;
-    height: 100vh;
+    display: grid; /* Aktiverar grid-layout för containern */
+    grid-template-columns: 1fr 2fr 1fr; /* Skapar 3 kolumner med olika fördelning (1fr, 2fr, 1fr) */
+    grid-template-rows: auto 1fr 2fr; /* Skapar 3 rader med dynamisk höjd för den första och fasta för de andra två */
+    gap: 10px; /* Skapar ett mellanrum på 10px mellan grid-boxarna */
+    height: 100vh; /* Gör containern lika hög som visningsfönstret */
 }
 
 /* Gemensam stil för alla grid-boxar för att visa synliga gränser */
 .container > div {
-    border: 1px solid #000; /* Synliga boxar */
-    background-color: #ffa200; /* Ljus bakgrund för kontrast */
-    padding: 10px;
-    box-sizing: border-box; /* Säkerställer att padding inte påverkar storleken */
-    border-radius: 5px; /* Här avrundar vi hörnen */
+    border: 3px solid #000; /* Synliga svarta kanter runt varje box */
+    background-color: #ff0000; /* Röd bakgrund för kontrast */
+    padding: 10px; /* 10px padding inuti boxen */
+    box-sizing: border-box; /* Säkerställer att padding inte påverkar elementets storlek */
+    border-radius: 5px; /* Runda hörnen på boxarna */
 }
 
 /* Vänster kolumn */
 .left {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    background-color: #ddd;
+    grid-column: 1 / 2; /* Elementet sträcker sig från första till andra kolumnen */
+    grid-row: 2 / 3; /* Elementet sträcker sig från andra till tredje raden */
 }
 
-/* Ingredienser */
+/* Ingredienser (för listitems) */
 .ingredient {
-    text-decoration: none; /* Tar bort understrykningen */
-    color: #333; /* Standard färg för texten */
-    font-size: 16px; /* Standardstorlek på texten */
-    display: inline-block;
-    transition: font-size 0.3s ease, color 0.3s ease; /* Lägg till en transition för storlek och färg */
+    text-decoration: none; /* Tar bort understrykningen från länkar */
+    color: #000000; /* Sätt standard textfärg till svart */
+    font-size: 16px; /* Standard textstorlek */
+    transition: font-size 0.3s ease, color 0.3s ease; /* Lägg till en mjuk övergång för textstorlek och färg */
 }
 
 .ingredient:hover {
     font-size: 20px; /* Gör texten större vid hover */
-    color: #007bff; /* Ändra färgen vid hover */
+    color: #ffffff; /* Byt textfärg till vit vid hover */
+    text-decoration: underline; /* Lägg till understrykning vid hover */
 }
 
 /* Dölja bilder som standard */
 .ingredient-image {
-    display: none; /* Bilden är dolda från början */
-    position: absolute; /* Gör så att den kan placeras ovanpå */
+    display: none; /* Bilden är osynlig från början */
+    position: absolute; /* Gör så att bilden placeras ovanpå andra element */
     top: 250%; /* Sätt bilden direkt under listobjektet */
-    left: 0;
-    width: 140px; /* Justera bredden på bilden efter behov */
-    height: auto;
+    left: 80px; /* Justera bildens placering horisontellt */
+    width: 140px; /* Justera bredden på bilden */
+    height: auto; /* Bevara bildens proportioner */
 }
 
 /* Visa bilden när användaren hovrar över ingrediensen */
@@ -54,76 +61,78 @@
 
 /* För att placera innehåll rätt i listan */
 ul {
-    position: relative;
-    list-style-type: none; /* Tar bort punkterna från listan */
-    padding-left: 0;
+    position: relative; /* Positionera listan relativt för sina barn */
+    list-style-type: none; /* Ta bort standardpunkterna från listan */
+    padding-left: 0; /* Ta bort vänster padding */
 }
 
 /* Sektioner */
 .top-center {
-    grid-column: 2 / 3;
-    grid-row: 1;
-    background-color: #ccc;
+    grid-column: 2 / 3; /* Elementet sträcker sig över den andra kolumnen */
+    grid-row: 1; /* Sätt elementet i första raden */
+    display: flex; /* Gör denna box till en flex-container */
+    justify-content: center; /* Centrera innehållet horisontellt */
+    font-size: 20px; /* Sätt textstorleken */
 }
 
 .middle-center {
-    grid-column: 2 / 3;
-    grid-row: 3 / 4;
-    background-color: #bbb;
-    font-size: 11px;
+    grid-column: 2 / 3; /* Elementet sträcker sig över den andra kolumnen */
+    grid-row: 3 / 4; /* Sätt elementet i tredje raden */
+    font-size: 11px; /* Sätt textstorlek för mitten-sektionen */
 }
 
 /* Stil för alla <li> i ol */
 .middle-center li {
-    font-size: 14px; /* Standardstorlek */
-    margin-bottom: 10px; /* Litet mellanrum mellan punkterna */
-    transition: transform 0.3s ease, color 0.3s ease; /* Mjuk övergång */
+    font-size: 14px; /* Standardstorlek för listobjekt */
+    margin-bottom: 10px; /* Lägger till mellanrum mellan listobjekten */
+    transition: font-size 0.3s ease, color 0.3s ease; /* Mjuk övergång för fontstorlek och färg */
 }
 
 /* Hover-effekt för varje <li> */
 .middle-center li:hover {
-    transform: scale(1.2); /* Förstorar individuellt */
-    color: #007bff; /* Ändrar färg vid hover */
-    font-weight: bold; /* Gör texten fetare vid hover */
+    font-size: 16px; /* Gör texten större vid hover */
+    color: #ffffff; /* Ändrar textfärg till vit vid hover */
+    font-weight: bold; /* Gör texten fet vid hover */
 }
 
 .bottom-center {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    background-color: #ccc;
+    grid-column: 2 / 3; /* Sträcker sig över andra kolumnen */
+    grid-row: 2 / 3; /* Sträcker sig över andra raden */
 }
 
 /* Footer */
 .footer {
-    grid-column: 1 / 4;
-    background-color: #ccc;
+    grid-column: 1 / 4; /* Footer sträcker sig över hela bredden av griden */
+    display: flex; /* Gör footer till en flex-container */
+    justify-content: center; /* Centrera innehållet horisontellt */
+    color: rgb(0, 0, 0);
 }
 
 /* Höger kolumn */
 .right {
-    grid-column: 3 / 4;
-    grid-row: 2 / 5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    grid-column: 3 / 4; /* Elementet sträcker sig över den tredje kolumnen */
+    grid-row: 2 / 5; /* Sträcker sig från andra till femte raden */
+    display: flex; /* Gör denna box till en flex-container */
+    align-items: center; /* Centrerar innehåll vertikalt */
+    justify-content: center; /* Centrerar innehåll horisontellt */
 }
 
 /* Bildcontainer */
 .image-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: auto;
+    display: flex; /* Gör containern till en flex-container */
+    flex-direction: column; /* Ordna bilderna vertikalt */
+    gap: 10px; /* Lägger till ett mellanrum mellan bilderna */
+    align-items: center; /* Centrerar bilderna horisontellt */
+    justify-content: center; /* Centrerar bilderna vertikalt */
+    height: 100%; /* Gör containern lika hög som dess förälderelement */
+    width: auto; /* Sätt bredden på bilden till auto */
 }
 
 /* Justera bilder */
 .image-container img {
-    max-width: 90%;
-    max-height: 50%; /* Varje bild får max halva höjden av containern */
-    object-fit: contain;
-    border: 1px solid #000; /* Synlig gräns runt bilderna */
-    border-radius: 5px; /* Avrundade hörn på bilderna */
+    max-width: 90%; /* Begränsar bildens bredd till 90% av containern */
+    max-height: 50%; /* Begränsar bildens höjd till max 50% av containern */
+    object-fit: contain; /* Gör så att bilderna behåller sina proportioner och syns helt */
+    border: 1px solid #000;
+    border-radius: 5px; /* Gör hörnen på bilderna rundade */
 }
