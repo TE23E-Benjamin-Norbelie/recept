@@ -10,18 +10,20 @@
 /* Gemensam stil för alla grid-boxar för att visa synliga gränser */
 .container > div {
     border: 1px solid #000; /* Synliga boxar */
-    background-color: #f4f4f4; /* Ljus bakgrund för kontrast */
+    background-color: #ffa200; /* Ljus bakgrund för kontrast */
     padding: 10px;
     box-sizing: border-box; /* Säkerställer att padding inte påverkar storleken */
+    border-radius: 5px; /* Här avrundar vi hörnen */
 }
 
 /* Vänster kolumn */
 .left {
     grid-column: 1 / 2;
-    grid-row: 2 /3;
+    grid-row: 2 / 3;
     background-color: #ddd;
 }
 
+/* Ingredienser */
 .ingredient {
     text-decoration: none; /* Tar bort understrykningen */
     color: #333; /* Standard färg för texten */
@@ -87,7 +89,7 @@ ul {
 
 .bottom-center {
     grid-column: 2 / 3;
-    grid-row: 2/3;
+    grid-row: 2 / 3;
     background-color: #ccc;
 }
 
@@ -104,7 +106,6 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 /* Bildcontainer */
@@ -124,4 +125,5 @@ ul {
     max-height: 50%; /* Varje bild får max halva höjden av containern */
     object-fit: contain;
     border: 1px solid #000; /* Synlig gräns runt bilderna */
+    border-radius: 5px; /* Avrundade hörn på bilderna */
 }
