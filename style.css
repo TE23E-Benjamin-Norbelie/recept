@@ -34,7 +34,6 @@ body {
 .ingredient {
     text-decoration: none; /* Tar bort understrykningen från länkar */
     color: #000000; /* Sätt standard textfärg till svart */
-    font-size: 16px; /* Standard textstorlek */
     transition: font-size 0.3s ease, color 0.3s ease; /* Lägg till en mjuk övergång för textstorlek och färg */
 }
 
